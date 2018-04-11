@@ -66,6 +66,7 @@
     <Compile Include="StudentDaoJsonTests.cs" />
     <Compile Include="StudentDaoTxtTests.cs" />
     <Compile Include="StudentDaoXmlTests.cs" />
+    <Compile Include="UnitTests\IStudentDaoUnitTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="log4net.config">
