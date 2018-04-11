@@ -39,7 +39,7 @@ namespace Student.Business.LogicTests.UnitTests
             Alumno alumnoIngresado = new Alumno(Guid.NewGuid(), id, dni, nombre, apellidos, edad, fechaNacimiento, fechaRegistro);
             Alumno alumnoDevuelto = alumnoIngresado;
 
-            alumnoDevuelto.Id = 23;
+            //alumnoDevuelto.Id = 23;
 
             _IStudentDao.Expects
                 .One
