@@ -8,13 +8,16 @@ using Student.Common.Logic.Models;
 using System.IO;
 using log4net;
 using Student.Common.Logic.Log;
+using Student.Common.Logic.Resources;
+using System.Resources;
 
 namespace Student.DataAccess.Dao
 {
     public class StudentDaoTxt : IStudentDao
     {
+        
         public static readonly ILogger Log = new Logger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        private readonly string Path = FileUtils.Path("txt");
+        private readonly string Path = FileUtils.Path(Format.Txt);
         public List<Alumno> Students { get ; set; }
 
         public Alumno Add(Alumno student)

@@ -54,14 +54,88 @@
     <Compile Include="FileUtils\FileUtils.cs" />
     <Compile Include="FileUtils\FormatUtil.cs" />
     <Compile Include="FileUtils\TypeFormat.cs" />
+    <Compile Include="Resources\Format.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Format.resx</DependentUpon>
+    </Compile>
     <Compile Include="Log\ILogger.cs" />
     <Compile Include="Log\Logger.cs" />
     <Compile Include="Models\Alumno.cs" />
     <Compile Include="Models\VuelingObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Language.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Language.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Language.EN-GB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Language.EN-GB.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Language.ES-ES.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Language.ES-ES.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Language.CA-ES.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Language.CA-ES.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\LogText.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LogText.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Query.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Query.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Utf-8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Utf-8.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Format.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Format.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Language.EN-GB.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Language.EN-GB.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Language.ES-ES.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Language.ES-ES.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Language.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Language.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Language.CA-ES.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Language.CA-ES.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\LogText.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LogText.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Query.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Query.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Utf-8.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Utf-8.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Student.Common.Logic.Log;
 using Student.Common.Logic.Models;
 using System.Data.SqlClient;
+using Student.Common.Logic.Resources;
 
 namespace Student.DataAccess.Dao
 {
@@ -28,7 +29,7 @@ namespace Student.DataAccess.Dao
         public Alumno Add(Alumno student)
         {
             student.ConvertDate();
-            string sql = "insert into dbo.Students  (UUID,Nombre,Apellido,Dni,DateRegistry,DateBorn,Edad) values (@UUID,@Nombre,@Apellido,@Dni,@DateRegistry,@DateBorn,@Edad);";
+            string sql = Query.Insert;
             Log.Debug($"Añadimos los datos {student.ToString()}");
             try
             {
@@ -72,8 +73,9 @@ namespace Student.DataAccess.Dao
         public List<Alumno> GetAll()
         {
             Students = new List<Alumno>();
-            Alumno student = new Alumno();
-            string sql = "Select * from dbo.Students;";
+            
+            string sql =Query.SelectAll;
+
             Log.Debug($"Añadimos los datos a lista Students");
             try
             {
@@ -88,16 +90,17 @@ namespace Student.DataAccess.Dao
                             {
                                 while (srd.Read())
                                 {
-                                    student.Guid =Guid.Parse(srd.GetString(0));
-                                    student.Id = srd.GetInt32(1);
-                                    student.Nombre = srd.GetString(2);
-                                    student.Apellidos = srd.GetString(3);
-                                    student.Dni = srd.GetString(4);
-                                    student.DateRegistry = Convert.ToDateTime(srd.GetString(5));
-                                    student.DateBorn = Convert.ToDateTime(srd.GetString(6));
-                                    student.Edad = srd.GetInt32(7);
-                                    Log.Debug($"Añadimos {student.ToString()} en memoria");
-                                    Students.Add(student);
+                                    Student = new Alumno();
+                                    Student.Guid =Guid.Parse(srd.GetString(0));
+                                    Student.Id = srd.GetInt32(1);
+                                    Student.Nombre = srd.GetString(2);
+                                    Student.Apellidos = srd.GetString(3);
+                                    Student.Dni = srd.GetString(4);
+                                    Student.DateRegistry = Convert.ToDateTime(srd.GetString(5));
+                                    Student.DateBorn = Convert.ToDateTime(srd.GetString(6));
+                                    Student.Edad = srd.GetInt32(7);
+                                    Log.Debug($"Añadimos {Student.ToString()} en memoria");
+                                    Students.Add(Student);
                                 }
                                 return Students;
                             }

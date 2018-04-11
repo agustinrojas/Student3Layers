@@ -12,7 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Student.Common.Logic.Resources;
 
 namespace Student.Presentation.WinSite
 {
@@ -25,6 +25,7 @@ namespace Student.Presentation.WinSite
             try
             {
                 InitializeComponent();
+                ChangeLanguage();
                 DataGrid.DataSource = IStudentBl.GetAll(TypeFormat.Txt);
             }
             catch (NullReferenceException ex)
@@ -83,12 +84,12 @@ namespace Student.Presentation.WinSite
             }
             catch (ArgumentNullException ex)
             {
-                MessageError("Problema interno");
+                MessageError(ex.Message);
                 Log.Error(ex);
             }
             catch (FileNotFoundException ex)
             {
-                MessageError("Fallo en el registro , archivo no encontrado");
+                MessageError(ex.Message);
                 Log.Error(ex);
             }
             catch (FileLoadException ex)
@@ -282,7 +283,16 @@ namespace Student.Presentation.WinSite
                 Log.Error(ex);
             }
         }
+        private void ChangeLanguage()
+        {
+            menuToolStripMenuItem.Text = Language.menuToolStripMenuItem;
+            registroToolStripMenuItem.Text = Language.registroToolStripMenuItem;
+            lblValor.Text = Language.lblValor;
+            lblCampo.Text = Language.lblCampo;
+            BtnFiltrar.Text = Language.BtnFiltrar;
+            BtnSql.Text = Language.BtnSql;
 
-     
+        }
+
     }
 }

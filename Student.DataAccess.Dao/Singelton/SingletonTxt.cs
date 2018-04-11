@@ -1,6 +1,7 @@
 ﻿using Student.Common.Logic.FileUtils;
 using Student.Common.Logic.Log;
 using Student.Common.Logic.Models;
+using Student.Common.Logic.Resources;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,13 +25,13 @@ namespace Student.DataAccess.Dao
         }
         public void Load()
         {
-            Log.Debug("Cargamos la lista el archiva");
+            Log.Debug(LogText.Object);
             StudentDaoTxt Js = new StudentDaoTxt();
             students = Js.GetAll();
         }
         public List<Alumno> GetList()
         {
-            Log.Debug("Devuelve la lista cargada");
+            Log.Debug(LogText.Object);
             return students;
         }
 

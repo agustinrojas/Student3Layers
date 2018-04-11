@@ -34,8 +34,8 @@
             this.BtnXml = new System.Windows.Forms.Button();
             this.BtnFiltrar = new System.Windows.Forms.Button();
             this.textValue = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.lblCampo = new System.Windows.Forms.Label();
+            this.lblValor = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -100,23 +100,23 @@
             this.textValue.Size = new System.Drawing.Size(207, 20);
             this.textValue.TabIndex = 9;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(313, 89);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 13);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "Campo";
-            // 
             // lblCampo
             // 
             this.lblCampo.AutoSize = true;
-            this.lblCampo.Location = new System.Drawing.Point(79, 89);
+            this.lblCampo.Location = new System.Drawing.Point(313, 89);
             this.lblCampo.Name = "lblCampo";
-            this.lblCampo.Size = new System.Drawing.Size(94, 13);
-            this.lblCampo.TabIndex = 16;
-            this.lblCampo.Text = "Introduzca el valor";
+            this.lblCampo.Size = new System.Drawing.Size(40, 13);
+            this.lblCampo.TabIndex = 15;
+            this.lblCampo.Text = "Campo";
+            // 
+            // lblValor
+            // 
+            this.lblValor.AutoSize = true;
+            this.lblValor.Location = new System.Drawing.Point(79, 89);
+            this.lblValor.Name = "lblValor";
+            this.lblValor.Size = new System.Drawing.Size(94, 13);
+            this.lblValor.TabIndex = 16;
+            this.lblValor.Text = "Introduzca el valor";
             // 
             // menuStrip1
             // 
@@ -139,7 +139,7 @@
             // registroToolStripMenuItem
             // 
             this.registroToolStripMenuItem.Name = "registroToolStripMenuItem";
-            this.registroToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.registroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.registroToolStripMenuItem.Text = "Registrar";
             this.registroToolStripMenuItem.Click += new System.EventHandler(this.registroToolStripMenuItem_Click);
             // 
@@ -176,8 +176,8 @@
             this.ClientSize = new System.Drawing.Size(786, 390);
             this.Controls.Add(this.BtnSql);
             this.Controls.Add(this.CBoxSelect);
+            this.Controls.Add(this.lblValor);
             this.Controls.Add(this.lblCampo);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.textValue);
             this.Controls.Add(this.BtnFiltrar);
             this.Controls.Add(this.BtnXml);
@@ -204,8 +204,8 @@
         private System.Windows.Forms.Button BtnXml;
         private System.Windows.Forms.Button BtnFiltrar;
         private System.Windows.Forms.TextBox textValue;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblCampo;
+        private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registroToolStripMenuItem;

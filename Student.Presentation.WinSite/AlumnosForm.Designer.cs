@@ -35,16 +35,20 @@
             this.textNombre = new System.Windows.Forms.TextBox();
             this.textApellido = new System.Windows.Forms.TextBox();
             this.textDni = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblId = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblApellido = new System.Windows.Forms.Label();
+            this.lblDni = new System.Windows.Forms.Label();
+            this.lblDateBron = new System.Windows.Forms.Label();
             this.dateBorn = new System.Windows.Forms.DateTimePicker();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuRegistro = new System.Windows.Forms.ToolStripMenuItem();
             this.BtnSql = new System.Windows.Forms.Button();
+            this.idiomaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuOptionCast = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuOptionCat = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuOptionIng = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -106,50 +110,50 @@
             this.textDni.Size = new System.Drawing.Size(242, 20);
             this.textDni.TabIndex = 6;
             // 
-            // label1
+            // lblId
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(57, 51);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(16, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Id";
+            this.lblId.AutoSize = true;
+            this.lblId.Location = new System.Drawing.Point(57, 51);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(16, 13);
+            this.lblId.TabIndex = 7;
+            this.lblId.Text = "Id";
             // 
-            // label2
+            // lblName
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(57, 87);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Nombre";
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(57, 87);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(44, 13);
+            this.lblName.TabIndex = 8;
+            this.lblName.Text = "Nombre";
             // 
-            // label3
+            // lblApellido
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(57, 124);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 13);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Apellidos";
+            this.lblApellido.AutoSize = true;
+            this.lblApellido.Location = new System.Drawing.Point(57, 124);
+            this.lblApellido.Name = "lblApellido";
+            this.lblApellido.Size = new System.Drawing.Size(49, 13);
+            this.lblApellido.TabIndex = 9;
+            this.lblApellido.Text = "Apellidos";
             // 
-            // label4
+            // lblDni
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(57, 160);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(23, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Dni";
+            this.lblDni.AutoSize = true;
+            this.lblDni.Location = new System.Drawing.Point(57, 160);
+            this.lblDni.Name = "lblDni";
+            this.lblDni.Size = new System.Drawing.Size(23, 13);
+            this.lblDni.TabIndex = 10;
+            this.lblDni.Text = "Dni";
             // 
-            // label5
+            // lblDateBron
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(57, 199);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(108, 13);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Fecha de Nacimiento";
+            this.lblDateBron.AutoSize = true;
+            this.lblDateBron.Location = new System.Drawing.Point(57, 199);
+            this.lblDateBron.Name = "lblDateBron";
+            this.lblDateBron.Size = new System.Drawing.Size(108, 13);
+            this.lblDateBron.TabIndex = 11;
+            this.lblDateBron.Text = "Fecha de Nacimiento";
             // 
             // dateBorn
             // 
@@ -161,7 +165,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1});
+            this.toolStripMenuItem1,
+            this.idiomaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(584, 24);
@@ -179,7 +184,7 @@
             // MenuRegistro
             // 
             this.MenuRegistro.Name = "MenuRegistro";
-            this.MenuRegistro.Size = new System.Drawing.Size(98, 22);
+            this.MenuRegistro.Size = new System.Drawing.Size(180, 22);
             this.MenuRegistro.Text = "Lista";
             this.MenuRegistro.Click += new System.EventHandler(this.MenuRegistro_Click);
             // 
@@ -193,6 +198,37 @@
             this.BtnSql.UseVisualStyleBackColor = true;
             this.BtnSql.Click += new System.EventHandler(this.BtnSql_Click);
             // 
+            // idiomaToolStripMenuItem
+            // 
+            this.idiomaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuOptionCast,
+            this.MenuOptionCat,
+            this.MenuOptionIng});
+            this.idiomaToolStripMenuItem.Name = "idiomaToolStripMenuItem";
+            this.idiomaToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.idiomaToolStripMenuItem.Text = "Idioma";
+            // 
+            // MenuOptionCast
+            // 
+            this.MenuOptionCast.Name = "MenuOptionCast";
+            this.MenuOptionCast.Size = new System.Drawing.Size(180, 22);
+            this.MenuOptionCast.Text = "Castellano";
+            this.MenuOptionCast.Click += new System.EventHandler(this.MenuOptionCast_Click);
+            // 
+            // MenuOptionCat
+            // 
+            this.MenuOptionCat.Name = "MenuOptionCat";
+            this.MenuOptionCat.Size = new System.Drawing.Size(180, 22);
+            this.MenuOptionCat.Text = "Catalán";
+            this.MenuOptionCat.Click += new System.EventHandler(this.MenuOptionCat_Click);
+            // 
+            // MenuOptionIng
+            // 
+            this.MenuOptionIng.Name = "MenuOptionIng";
+            this.MenuOptionIng.Size = new System.Drawing.Size(180, 22);
+            this.MenuOptionIng.Text = "Inglés";
+            this.MenuOptionIng.Click += new System.EventHandler(this.MenuOptionIng_Click);
+            // 
             // AlumnosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -200,11 +236,11 @@
             this.ClientSize = new System.Drawing.Size(584, 386);
             this.Controls.Add(this.BtnSql);
             this.Controls.Add(this.dateBorn);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblDateBron);
+            this.Controls.Add(this.lblDni);
+            this.Controls.Add(this.lblApellido);
+            this.Controls.Add(this.lblName);
+            this.Controls.Add(this.lblId);
             this.Controls.Add(this.textDni);
             this.Controls.Add(this.textApellido);
             this.Controls.Add(this.textNombre);
@@ -232,15 +268,19 @@
         private System.Windows.Forms.TextBox textNombre;
         private System.Windows.Forms.TextBox textApellido;
         private System.Windows.Forms.TextBox textDni;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblId;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblApellido;
+        private System.Windows.Forms.Label lblDni;
+        private System.Windows.Forms.Label lblDateBron;
         private System.Windows.Forms.DateTimePicker dateBorn;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem MenuRegistro;
         private System.Windows.Forms.Button BtnSql;
+        private System.Windows.Forms.ToolStripMenuItem idiomaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MenuOptionCast;
+        private System.Windows.Forms.ToolStripMenuItem MenuOptionCat;
+        private System.Windows.Forms.ToolStripMenuItem MenuOptionIng;
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Student.Business.Logic;
 using Student.Common.Logic.FileUtils;
 using Student.Common.Logic.Models;
+using Student.Common.Logic.Resources;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,8 @@ using System.Windows.Forms;
 using log4net;
 using System.IO;
 using Student.Common.Logic.Log;
+using System.Threading;
+using System.Globalization;
 
 namespace Student.Presentation.WinSite
 {
@@ -26,10 +29,12 @@ namespace Student.Presentation.WinSite
 
         public AlumnosForm()
         {
+            
             Log.Debug("Arranca la aplicación");
             InitializeComponent();
             alumno = new Alumno();
             AlumnoBL = new StudentBL();
+            ChangeLanguage();
         }
         private void LoadAlumnoData()
         {
@@ -214,6 +219,43 @@ namespace Student.Presentation.WinSite
                 MessageError("Los datos introducidos no tienen el formato correcto");
                 Log.Error(ex);
             }
+        }
+
+        private void ChangeLanguage()
+        {
+            toolStripMenuItem1.Text = Language.toolStripMenuItem1;
+            MenuRegistro.Text = Language.MenuRegistro;
+            lblId.Text = Language.lblId;
+            lblName.Text = Language.lblName;
+            lblApellido.Text = Language.lblApellido;
+            lblDateBron.Text = Language.lblDateBron;
+            BtnSql.Text = Language.BtnSql;
+            MenuOptionCast.Text = Language.MenuOptionCast;
+            MenuOptionCat.Text = Language.MenuOptionCat;
+            MenuOptionIng.Text = Language.MenuOptionIng;
+            idiomaToolStripMenuItem.Text = Language.idiomaToolStripMenuItem;
+        }
+        private void ChangeCulture(string utf_8)
+        {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(utf_8);
+        }
+
+        private void MenuOptionCast_Click(object sender, EventArgs e)
+        {
+            ChangeCulture(Utf_8.Castellano);
+            ChangeLanguage();
+        }
+
+        private void MenuOptionCat_Click(object sender, EventArgs e)
+        {
+            ChangeCulture(Utf_8.Catala);
+            ChangeLanguage();
+        }
+
+        private void MenuOptionIng_Click(object sender, EventArgs e)
+        {
+            ChangeCulture(Utf_8.English);
+            ChangeLanguage();
         }
     }
 }

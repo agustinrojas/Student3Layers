@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using log4net;
+using Student.Common.Logic.Resources;
 
 namespace Student.Common.Logic.Log
 {
@@ -21,7 +22,7 @@ namespace Student.Common.Logic.Log
 
         public void Error(Exception ex)
         {
-            _logger.Error($"Error{ex.GetType().Name} , {ex.Message} ,ruta {ex.StackTrace}",ex);
+            _logger.Error($"{LogText.Error},{ex.GetType().Name} , {ex.Message} , {ex.StackTrace}",ex);
         }
 
         public void Info(object mensaje) => _logger.Info(mensaje);
