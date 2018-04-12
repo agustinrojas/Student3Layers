@@ -17,7 +17,7 @@ namespace Student.Business.Logic.Tests
         [DataRow("14/11/1990","05/04/2018",27)]
         [DataRow("09/04/1989", "05/04/2018", 28)]
         [TestMethod]
-        public void AreAgeTest(string DateBorn,string DateRegistry ,int result)
+        public void IntegrationAreAgeTest(string DateBorn,string DateRegistry ,int result)
         {
             Log.Debug("Iniciamos metodo test de edad");
             Assert.AreEqual(result,Age.AreAge(Convert.ToDateTime(DateBorn),Convert.ToDateTime(DateRegistry)));

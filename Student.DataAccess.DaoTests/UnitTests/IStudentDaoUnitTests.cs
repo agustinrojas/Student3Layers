@@ -34,12 +34,12 @@ namespace Student.Business.LogicTests.UnitTests
         [DataRow(2, "54567678t", "Agus", "Rojas", 24, "02/04/1994", "09/04/2018", Campo.Nombre, "Agus")]
         [DataRow(3, "98765564m", "David", "Garcia", 23, "09/09/1995", "09/04/2018", Campo.Nombre, "David")]
         [TestMethod]
-        public void AddTestUnitario(int id, string dni, string nombre, string apellidos, int edad, string fechaNacimiento, string fechaRegistro, Campo campo, string value)
+        public void UnitAddTest(int id, string dni, string nombre, string apellidos, int edad, string fechaNacimiento, string fechaRegistro, Campo campo, string value)
         {
             Alumno alumnoIngresado = new Alumno(Guid.NewGuid(), id, dni, nombre, apellidos, edad, fechaNacimiento, fechaRegistro);
             Alumno alumnoDevuelto = alumnoIngresado;
 
-            //alumnoDevuelto.Id = 23;
+            alumnoDevuelto.Id = 23;
 
             _IStudentDao.Expects
                 .One
@@ -53,7 +53,7 @@ namespace Student.Business.LogicTests.UnitTests
         [DataRow(2, "54567678t", "Agus", "Rojas", 24, "02/04/1994", "09/04/2018", Campo.Nombre, "Agus")]
         [DataRow(3, "98765564m", "David", "Garcia", 23, "09/09/1995", "09/04/2018", Campo.Nombre, "David")]
         [TestMethod]
-        public void GetAllTestUnitario(int id, string dni, string nombre, string apellidos, int edad, string fechaNacimiento, string fechaRegistro, Campo campo, string value)
+        public void UnitGetAllTest(int id, string dni, string nombre, string apellidos, int edad, string fechaNacimiento, string fechaRegistro, Campo campo, string value)
         {
             Alumno alumnoIngresado = new Alumno(Guid.NewGuid(), id, dni, nombre, apellidos, edad, fechaNacimiento, fechaRegistro);
             List<Alumno> ListaTestGetAll = new List<Alumno> { alumnoIngresado };

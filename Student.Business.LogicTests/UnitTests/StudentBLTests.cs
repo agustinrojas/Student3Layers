@@ -37,10 +37,8 @@ namespace Student.Business.Logic.Tests
             _factory.ClearExpectations();
         }
         [DataRow(TypeFormat.Txt)]
-        [DataRow(TypeFormat.Json)]
-        [DataRow(TypeFormat.Xml)]
         [TestMethod]
-        public void BlAddTest(TypeFormat typeFormat)
+        public void UnitBlAddTestTxt(TypeFormat typeFormat)
         {
             Alumno student = new Alumno(Guid.NewGuid(), 1, "45687654h", "Daniel", "Madrigal", 28, "24/06/1990", "05/09/2017");
             //MetohdWith cuando el metodo espera parámetros
@@ -52,10 +50,35 @@ namespace Student.Business.Logic.Tests
             Assert.AreEqual(student,StudentBLMock.MockObject.Add(student,typeFormat));
         }
 
-        
-        
+        [DataRow(TypeFormat.Xml)]
+        [TestMethod]
+        public void UnitBlAddTestXml(TypeFormat typeFormat)
+        {
+            Alumno student = new Alumno(Guid.NewGuid(), 1, "45687654h", "Daniel", "Madrigal", 28, "24/06/1990", "05/09/2017");
+            //MetohdWith cuando el metodo espera parámetros
+            StudentBLMock.Expects
+                .One
+                .MethodWith(StudentBLMockInstance => StudentBLMockInstance.Add(student, typeFormat))
+                .WillReturn(student);
+
+            Assert.AreEqual(student, StudentBLMock.MockObject.Add(student, typeFormat));
+        }
+        [DataRow(TypeFormat.Json)]
+        [TestMethod]
+        public void UnitBlAddTestJson(TypeFormat typeFormat)
+        {
+            Alumno student = new Alumno(Guid.NewGuid(), 1, "45687654h", "Daniel", "Madrigal", 28, "24/06/1990", "05/09/2017");
+            //MetohdWith cuando el metodo espera parámetros
+            StudentBLMock.Expects
+                .One
+                .MethodWith(StudentBLMockInstance => StudentBLMockInstance.Add(student, typeFormat))
+                .WillReturn(student);
+
+            Assert.AreEqual(student, StudentBLMock.MockObject.Add(student, typeFormat));
+        }
+
         [TestMethod()]
-        public void GetAllUnitTest()
+        public void UnitGetAllTest()
         {
             List<Alumno> Students = new List<Alumno>
             {

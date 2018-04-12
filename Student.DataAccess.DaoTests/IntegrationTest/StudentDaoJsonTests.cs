@@ -14,11 +14,11 @@ using Student.Common.Logic.Log;
 namespace Student.DataAccess.Dao.Tests
 {
     [TestClass()]
-    public class StudentDaoTxtTests
+    public class StudentDaoJsonTests
     {
         public static readonly ILogger Log = new Logger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        private readonly string Path = FileUtils.Path("txt");
-        private readonly StudentDaoTxt studentDaoTxt = new StudentDaoTxt();
+        private readonly string Path = FileUtils.Path("json");
+        private readonly StudentDaoJson studentDaoJson = new StudentDaoJson();
         [TestInitialize]
         public void Init()
         {
@@ -38,10 +38,10 @@ namespace Student.DataAccess.Dao.Tests
         }
         [DataTestMethod]
         [DynamicData(nameof(StudentData), DynamicDataSourceType.Method)]
-        public void TxtAddTest(Alumno student)
+        public void IntegrationJsonAddTest(Alumno student)
         {
             Log.Debug(System.Reflection.MethodBase.GetCurrentMethod().Name + " Agrega alumno");
-            var result = studentDaoTxt.Add(student);
+            var result = studentDaoJson.Add(student);
             Log.Debug($"EL alumno devuelto {result.ToString()}");
             Assert.IsTrue(student.Equals(result));
         }

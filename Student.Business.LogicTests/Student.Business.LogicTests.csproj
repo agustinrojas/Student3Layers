@@ -62,10 +62,10 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="AgeTests.cs" />
+    <Compile Include="IntegrationTest\AgeTests.cs" />
     <Compile Include="UnitTests\FiltroTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StudentBLTests.cs" />
+    <Compile Include="UnitTests\StudentBLTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="log4net.config">
@@ -87,9 +87,7 @@
       <Name>Student.DataAccess.Dao</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="IntegrationTest\" />
-  </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

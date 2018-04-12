@@ -14,11 +14,11 @@ using Student.Common.Logic.Log;
 namespace Student.DataAccess.Dao.Tests
 {
     [TestClass()]
-    public class StudentDaoJsonTests
+    public class StudentDaoXmlTests
     {
         public static readonly ILogger Log = new Logger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        private readonly string Path = FileUtils.Path("json");
-        private readonly StudentDaoJson studentDaoJson = new StudentDaoJson();
+        private readonly string Path = FileUtils.Path("xml");
+        private readonly StudentDaoXml studentDaoXml = new StudentDaoXml();
         [TestInitialize]
         public void Init()
         {
@@ -33,18 +33,19 @@ namespace Student.DataAccess.Dao.Tests
         }
         public static IEnumerable<object[]> StudentData()
         {
-            yield return new object[] { new Alumno(Guid.NewGuid(), 1, "45687654h", "Daniel", "Madrigal", 28, "24/06/1990", "05/09/2017") };
+            yield return new object[] { new Alumno(Guid.NewGuid(), 1, "45687654h", "Daniel", "Madrigal", 28, "24/06/1990","05/09/2017") };
             yield return new object[] { new Alumno(Guid.NewGuid(), 2, "46546546h", "Rebeca", "Barreira", 28, "24/06/1989", "07/11/2016") };
         }
         [DataTestMethod]
-        [DynamicData(nameof(StudentData), DynamicDataSourceType.Method)]
-        public void JsonAddTest(Alumno student)
+        [DynamicData(nameof(StudentData),DynamicDataSourceType.Method)]
+        public void IntegrationXmlAddTest(Alumno student)
         {
-            Log.Debug(System.Reflection.MethodBase.GetCurrentMethod().Name + " Agrega alumno");
-            var result = studentDaoJson.Add(student);
+            Log.Debug(System.Reflection.MethodBase.GetCurrentMethod().Name+" Agrega alumno");
+            var result = studentDaoXml.Add(student);
             Log.Debug($"EL alumno devuelto {result.ToString()}");
             Assert.IsTrue(student.Equals(result));
         }
 
+       
     }
 }

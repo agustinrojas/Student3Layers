@@ -63,9 +63,9 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StudentDaoJsonTests.cs" />
-    <Compile Include="StudentDaoTxtTests.cs" />
-    <Compile Include="StudentDaoXmlTests.cs" />
+    <Compile Include="IntegrationTest\StudentDaoJsonTests.cs" />
+    <Compile Include="IntegrationTest\StudentDaoTxtTests.cs" />
+    <Compile Include="IntegrationTest\StudentDaoXmlTests.cs" />
     <Compile Include="UnitTests\IStudentDaoUnitTests.cs" />
   </ItemGroup>
   <ItemGroup>
