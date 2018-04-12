@@ -44,11 +44,11 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuRegistro = new System.Windows.Forms.ToolStripMenuItem();
-            this.BtnSql = new System.Windows.Forms.Button();
             this.idiomaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuOptionCast = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuOptionCat = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuOptionIng = new System.Windows.Forms.ToolStripMenuItem();
+            this.BtnSql = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -184,19 +184,9 @@
             // MenuRegistro
             // 
             this.MenuRegistro.Name = "MenuRegistro";
-            this.MenuRegistro.Size = new System.Drawing.Size(180, 22);
+            this.MenuRegistro.Size = new System.Drawing.Size(98, 22);
             this.MenuRegistro.Text = "Lista";
             this.MenuRegistro.Click += new System.EventHandler(this.MenuRegistro_Click);
-            // 
-            // BtnSql
-            // 
-            this.BtnSql.Location = new System.Drawing.Point(457, 293);
-            this.BtnSql.Name = "BtnSql";
-            this.BtnSql.Size = new System.Drawing.Size(94, 58);
-            this.BtnSql.TabIndex = 14;
-            this.BtnSql.Text = "DataBase";
-            this.BtnSql.UseVisualStyleBackColor = true;
-            this.BtnSql.Click += new System.EventHandler(this.BtnSql_Click);
             // 
             // idiomaToolStripMenuItem
             // 
@@ -211,23 +201,33 @@
             // MenuOptionCast
             // 
             this.MenuOptionCast.Name = "MenuOptionCast";
-            this.MenuOptionCast.Size = new System.Drawing.Size(180, 22);
+            this.MenuOptionCast.Size = new System.Drawing.Size(129, 22);
             this.MenuOptionCast.Text = "Castellano";
             this.MenuOptionCast.Click += new System.EventHandler(this.MenuOptionCast_Click);
             // 
             // MenuOptionCat
             // 
             this.MenuOptionCat.Name = "MenuOptionCat";
-            this.MenuOptionCat.Size = new System.Drawing.Size(180, 22);
+            this.MenuOptionCat.Size = new System.Drawing.Size(129, 22);
             this.MenuOptionCat.Text = "Catalán";
             this.MenuOptionCat.Click += new System.EventHandler(this.MenuOptionCat_Click);
             // 
             // MenuOptionIng
             // 
             this.MenuOptionIng.Name = "MenuOptionIng";
-            this.MenuOptionIng.Size = new System.Drawing.Size(180, 22);
+            this.MenuOptionIng.Size = new System.Drawing.Size(129, 22);
             this.MenuOptionIng.Text = "Inglés";
             this.MenuOptionIng.Click += new System.EventHandler(this.MenuOptionIng_Click);
+            // 
+            // BtnSql
+            // 
+            this.BtnSql.Location = new System.Drawing.Point(457, 293);
+            this.BtnSql.Name = "BtnSql";
+            this.BtnSql.Size = new System.Drawing.Size(94, 58);
+            this.BtnSql.TabIndex = 14;
+            this.BtnSql.Text = "DataBase";
+            this.BtnSql.UseVisualStyleBackColor = true;
+            this.BtnSql.Click += new System.EventHandler(this.BtnSql_Click);
             // 
             // AlumnosForm
             // 
