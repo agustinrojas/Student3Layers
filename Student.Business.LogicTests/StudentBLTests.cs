@@ -18,29 +18,38 @@ namespace Student.Business.Logic.Tests
     public class StudentBLTests
     {
         public static readonly ILogger Log = new Logger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        private readonly StudentBL studentBL = new StudentBL();
-        private readonly MockFactory _factory;
-        public  readonly Mock<IStudentDao> StudentDaoMock;
+        private  MockFactory _factory;
+        private   Mock<IStudentDao> StudentDaoMock;
+        private  Mock<IStudentBL> StudentBLMock;
 
 
-        public StudentBLTests()
+       
+        [TestInitialize]
+        public void Init()
         {
             _factory = new MockFactory();
-            StudentDaoMock= _factory.CreateMock<IStudentDao>();
+            StudentDaoMock = _factory.CreateMock<IStudentDao>();
+            StudentBLMock = _factory.CreateMock<IStudentBL>();
         }
-      
-        
+        [TestCleanup]
+        public void Exit()
+        {
+            _factory.ClearExpectations();
+        }
         [DataRow(TypeFormat.Txt)]
         [DataRow(TypeFormat.Json)]
         [DataRow(TypeFormat.Xml)]
         [TestMethod]
         public void BlAddTest(TypeFormat typeFormat)
         {
-            Log.Debug("Entramos en test de formato");
             Alumno student = new Alumno(Guid.NewGuid(), 1, "45687654h", "Daniel", "Madrigal", 28, "24/06/1990", "05/09/2017");
-            var result = studentBL.Add(student, typeFormat);
-            Assert.IsTrue(student.Equals(result));
-            Log.Debug("Se registra que el alumno con el formato especificado");
+            //MetohdWith cuando el metodo espera parámetros
+            StudentBLMock.Expects
+                .One
+                .MethodWith(StudentBLMockInstance=> StudentBLMockInstance.Add(student ,typeFormat))
+                .WillReturn(student);
+
+            Assert.AreEqual(student,StudentBLMock.MockObject.Add(student,typeFormat));
         }
 
         
@@ -57,12 +66,14 @@ namespace Student.Business.Logic.Tests
 
             StudentDaoMock.Expects
                 .One
-                .Method(s=>s.GetAll())
+                .Method(StudentDaoMockInstance=> StudentDaoMockInstance.GetAll())
                 .WillReturn(Students);
-
-            StudentBL sb =new StudentBL();
-            List<Alumno> result = sb.GetAll(TypeFormat.Txt);
-            Assert.AreEqual(result,StudentDaoMock.MockObject.GetAll());
+            StudentBLMock.Expects
+                .One
+                .MethodWith(StudentBLMockInstance => StudentBLMockInstance.GetAll(TypeFormat.Txt))
+                .WillReturn(Students);
+           
+            Assert.AreEqual(Students, StudentBLMock.MockObject.GetAll(TypeFormat.Txt));
         }
     }
 }

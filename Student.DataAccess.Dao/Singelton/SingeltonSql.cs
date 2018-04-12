@@ -16,7 +16,7 @@ namespace Student.DataAccess.Dao
         private static readonly object padlock = new object();
         private List<Alumno> students { get; set; }
 
-        private SingletonSql()
+        private  SingletonSql()
         {
             students = new List<Alumno>();
             Load();
