@@ -60,7 +60,7 @@
     <Folder Include="Migrations" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Migrations\V1__CreateDataBase.sql" />
-    <Build Include="Migrations\V2__CreateTable.sql" />
+    <None Include="Migrations\V2__CreateTable.sql" />
+    <None Include="Migrations\V1__CreateDataBase.sql" />
   </ItemGroup>
 </Project>

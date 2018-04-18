@@ -11,8 +11,8 @@ using System.Data;
 
 namespace Student.DataAccess.Dao
 {
-    public class StudentDaoSql : IStudentDao
-        
+    public class StudentDaoSP : IStudentDao
+
     {
         public static readonly ILogger Log = new Logger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         public List<Alumno> Students { get; set; }
@@ -21,26 +21,26 @@ namespace Student.DataAccess.Dao
         private SqlCommand _cmd { get; set; }
         private readonly string connectionString;
 
-        public StudentDaoSql()
+        public StudentDaoSP()
         {
             _conn = null;
-            //connectionString = Environment.GetEnvironmentVariable("Database",EnvironmentVariableTarget.User);
-            connectionString = "Data Source =.; Initial Catalog = StudentDB; User ID = sa; Password = Pa$$w0rd";
+            connectionString = Environment.GetEnvironmentVariable("Database", EnvironmentVariableTarget.User);
         }
 
         public Alumno Add(Alumno student)
         {
             student.ConvertDate();
-            string sql = "insert into dbo.Students (UUID,Nombre,Apellido,Dni,DateRegistry,DateBorn,Edad) values (@UUID,@Nombre,@Apellido,@Dni,@DateRegistry,@DateBorn,@Edad);";
+            
             Log.Debug($"Añadimos los datos {student.ToString()}");
             try
             {
                 using (_conn = new SqlConnection(connectionString))
                 {
-                    using (_cmd = new SqlCommand(sql, _conn))
+                    using (_cmd = new SqlCommand())
                     {
                         _conn.Open();
-                        _cmd.CommandType = CommandType.Text;
+                        _cmd.Connection = _conn;
+                        _cmd.CommandType = CommandType.StoredProcedure;
                         _cmd.Parameters.AddWithValue("@UUID", student.Guid.ToString());
                         _cmd.Parameters.AddWithValue("@Nombre", student.Nombre);
                         _cmd.Parameters.AddWithValue("@Apellido", student.Apellidos);
@@ -55,7 +55,7 @@ namespace Student.DataAccess.Dao
                         // Obtenga la última identificación insertada. 
                         student.Id = Convert.ToInt32(_cmd.ExecuteScalar());
                         Log.Debug($"Recuperamos el id {student.Id}");
-                        return null;
+                        return student;
                     }
 
                 }
@@ -76,8 +76,8 @@ namespace Student.DataAccess.Dao
         public List<Alumno> GetAll()
         {
             Students = new List<Alumno>();
-            
-            string sql =Query.SelectAll;
+
+            string sql = Query.SelectAll;
 
             Log.Debug($"Añadimos los datos a lista Students");
             try
@@ -94,7 +94,7 @@ namespace Student.DataAccess.Dao
                                 while (srd.Read())
                                 {
                                     Student = new Alumno();
-                                    Student.Guid =Guid.Parse(srd.GetString(0));
+                                    Student.Guid = Guid.Parse(srd.GetString(0));
                                     Student.Id = srd.GetInt32(1);
                                     Student.Nombre = srd.GetString(2);
                                     Student.Apellidos = srd.GetString(3);
@@ -111,10 +111,10 @@ namespace Student.DataAccess.Dao
                             {
                                 return Students;
                             }
-                            
+
                         }
- 
-                        
+
+
                     }
                 }
             }
@@ -124,7 +124,7 @@ namespace Student.DataAccess.Dao
 
                 throw;
             }
-            
+
         }
     }
 }

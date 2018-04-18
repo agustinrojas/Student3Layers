@@ -1,5 +1,5 @@
-use StundetBD;
-GO;
+use StudentDB;
+GO
 
 create table Students(
 	UUID nvarchar(30),
@@ -8,7 +8,7 @@ create table Students(
 	Apellido nvarchar(50),
 	Dni nvarchar(25),
 	DateRegistry nvarchar(20),
-	DateBorb nvarchar(20),
+	DateBorn nvarchar(20),
 	Edad int
 );
-GO;
+GO

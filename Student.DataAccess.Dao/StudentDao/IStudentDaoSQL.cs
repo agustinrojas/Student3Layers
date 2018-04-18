@@ -1,19 +1,15 @@
-﻿using Student.Common.Logic.FileUtils;
-using Student.Common.Logic.Models;
+﻿using Student.Common.Logic.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Student.DataAccess.Dao
+namespace Student.DataAccess.Dao.StudentDao
 {
-    public interface IStudentDao
+    public interface IStudentDaoSQL
     {
         Alumno Add(Alumno student);
         List<Alumno> GetAll();
-
-        
-        
     }
 }
