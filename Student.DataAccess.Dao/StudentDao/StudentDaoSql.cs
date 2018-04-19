@@ -8,10 +8,11 @@ using Student.Common.Logic.Models;
 using System.Data.SqlClient;
 using Student.Common.Logic.Resources;
 using System.Data;
+using Student.DataAccess.Dao.StudentDao;
 
 namespace Student.DataAccess.Dao
 {
-    public class StudentDaoSql : IStudentDao
+    public class StudentDaoSql : IStudentDaoSQL
         
     {
         public static readonly ILogger Log = new Logger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
@@ -125,6 +126,16 @@ namespace Student.DataAccess.Dao
                 throw;
             }
             
+        }
+
+        public Alumno Delete(Alumno student)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Alumno Update(Alumno student)
+        {
+            throw new NotImplementedException();
         }
     }
 }

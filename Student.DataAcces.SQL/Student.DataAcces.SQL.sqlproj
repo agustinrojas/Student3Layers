@@ -63,4 +63,12 @@
     <None Include="Migrations\V2__CreateTable.sql" />
     <None Include="Migrations\V1__CreateDataBase.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Migrations\V3__StoredProcedureSelect.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Migrations\V4__StoredProcedureInsert.sql" />
+    <None Include="Migrations\V5__StoredProcedureUpdate.sql" />
+    <None Include="Migrations\V6__StoredPrecedureDelete.sql" />
+  </ItemGroup>
 </Project>
