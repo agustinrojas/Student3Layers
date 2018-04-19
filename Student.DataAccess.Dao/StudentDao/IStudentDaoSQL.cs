@@ -11,6 +11,7 @@ namespace Student.DataAccess.Dao.StudentDao
     {
         Alumno Add(Alumno student);
         List<Alumno> GetAll();
+        Alumno Select(Alumno student);
         Alumno Delete(Alumno student);
         Alumno Update(Alumno student);
     }

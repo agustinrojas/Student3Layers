@@ -137,5 +137,10 @@ namespace Student.DataAccess.Dao
         {
             throw new NotImplementedException();
         }
+
+        public Alumno Select(Alumno student)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
