@@ -17,5 +17,6 @@ namespace Student.Business.Logic
         List<Alumno> GetSelect(TypeFormat type , string value,Campo campo);
         List<Alumno> GetAll(TypeFormat typeFormat);
         void LoadDates();
+        
     }
 }

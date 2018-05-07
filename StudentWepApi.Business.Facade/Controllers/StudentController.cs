@@ -1,4 +1,5 @@
 ﻿using Student.Business.Logic;
+using Student.Common.Logic.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,7 +33,7 @@ namespace StudentWepApi.Business.Facade.Controllers
         /// <param name="student"></param>
         /// <returns></returns>
         [HttpPost()]
-        public IHttpActionResult Set(Student student)
+        public IHttpActionResult Set(Alumno student)
         {
 
             return Ok(_istudentBL.Set(student));
